@@ -15,6 +15,7 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
         mTouchView = new MainTouchView(this);
+        mTouchView.setImageResource(R.drawable.image);
         setContentView(mTouchView);
 		//setContentView(R.layout.activity_main);
 	}

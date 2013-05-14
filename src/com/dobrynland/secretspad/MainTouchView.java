@@ -6,13 +6,13 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.Gravity;
+import android.widget.ImageView;
 import android.view.MotionEvent;
 import android.graphics.RectF;
-import android.view.View;
 import android.widget.Toast;
 
 
-public class MainTouchView extends View
+public class MainTouchView extends ImageView
 {
     private Paint paint = new Paint();
     private Path path = new Path();
@@ -20,7 +20,8 @@ public class MainTouchView extends View
     public MainTouchView(Context context)
     {
         super(context);
-        paint.setAntiAlias(true);
+
+        //paint.setAntiAlias(true);
         paint.setStrokeWidth(6f);
         paint.setColor(Color.BLUE);
         paint.setStyle(Paint.Style.STROKE);
@@ -30,6 +31,7 @@ public class MainTouchView extends View
     @Override
     public void onDraw(Canvas canvas)
     {
+        super.onDraw(canvas);
         canvas.drawPath(path, paint);
     }
 
@@ -41,14 +43,14 @@ public class MainTouchView extends View
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                //path.addCircle(eventX, eventY,10, Path.Direction.CW);
                 path.moveTo(eventX, eventY);
+                path.addCircle(eventX, eventY,10, Path.Direction.CW);
                 return true;
             case MotionEvent.ACTION_MOVE:
                 //path.lineTo(eventX, eventY);
                 break;
             case MotionEvent.ACTION_UP:
-                path.addCircle(eventX, eventY,10, Path.Direction.CW);
+                //path.addCircle(eventX, eventY,10, Path.Direction.CW);
                 break;
             default:
                 return false;
@@ -56,7 +58,6 @@ public class MainTouchView extends View
 
         // Schedules a repaint.
         invalidate();
-
         return true;
     }
 
