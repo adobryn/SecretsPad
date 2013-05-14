@@ -8,10 +8,12 @@
     <file path="/fragment.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368522178745" ignored="false" />
     <file path="$PROJECT_DIR$/../untitled/src/Main.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1366892381752" ignored="false" />
     <file path="/Main.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1366892354747" ignored="false" />
-    <file path="/MainTouchView.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368520196314" ignored="false" />
+    <file path="/MainTouchView.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368529610662" ignored="false" />
     <file path="/DefaultValues.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368520373154" ignored="false" />
     <file path="/MainActivity.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368520665326" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/dobrynland/secretspad/R.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368522032889" ignored="false" />
+    <file path="/a.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368530003560" ignored="false" />
+    <file path="/sample.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368529997135" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +89,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="43" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
+            <state line="6" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,7 +109,7 @@
       <file leaf-file-name="MainTouchView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="8" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.16159695">
+            <state line="34" column="52" selection-start="820" selection-end="820" vertical-scroll-proportion="0.063079774">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -218,7 +220,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.customizations" />
+    <property name="options.lastSelected" value="preferences.sourceCode.Java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -486,8 +488,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -634,7 +636,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="43" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
+        <state line="6" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -650,7 +652,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="8" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.16159695">
+        <state line="34" column="52" selection-start="820" selection-end="820" vertical-scroll-proportion="0.063079774">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
