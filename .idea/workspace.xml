@@ -8,7 +8,7 @@
     <file path="/fragment.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368522178745" ignored="false" />
     <file path="$PROJECT_DIR$/../untitled/src/Main.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1366892381752" ignored="false" />
     <file path="/Main.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1366892354747" ignored="false" />
-    <file path="/MainTouchView.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368529610662" ignored="false" />
+    <file path="/MainTouchView.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368531798496" ignored="false" />
     <file path="/DefaultValues.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368520373154" ignored="false" />
     <file path="/MainActivity.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368520665326" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/dobrynland/secretspad/R.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368522032889" ignored="false" />
@@ -109,7 +109,7 @@
       <file leaf-file-name="MainTouchView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="52" selection-start="820" selection-end="820" vertical-scroll-proportion="0.063079774">
+            <state line="55" column="8" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.6938776">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -652,7 +652,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="52" selection-start="820" selection-end="820" vertical-scroll-proportion="0.063079774">
+        <state line="55" column="8" selection-start="1514" selection-end="1514" vertical-scroll-proportion="0.6938776">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

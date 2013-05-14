@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.Gravity;
 import android.view.MotionEvent;
+import android.graphics.RectF;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,7 +22,7 @@ public class MainTouchView extends View
         super(context);
         paint.setAntiAlias(true);
         paint.setStrokeWidth(6f);
-        paint.setColor(Color.BLACK);
+        paint.setColor(Color.BLUE);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
     }
@@ -40,13 +41,14 @@ public class MainTouchView extends View
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                //path.addCircle(eventX, eventY,10, Path.Direction.CW);
                 path.moveTo(eventX, eventY);
                 return true;
             case MotionEvent.ACTION_MOVE:
-                path.lineTo(eventX, eventY);
+                //path.lineTo(eventX, eventY);
                 break;
             case MotionEvent.ACTION_UP:
-                // nothing to do
+                path.addCircle(eventX, eventY,10, Path.Direction.CW);
                 break;
             default:
                 return false;
