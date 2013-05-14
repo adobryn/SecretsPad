@@ -12,14 +12,18 @@ import android.graphics.RectF;
 import android.widget.Toast;
 import android.graphics.PathMeasure;
 import android.graphics.Matrix;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainTouchView extends ImageView
 {
     private Paint paint = new Paint();
     private Path path = new Path();
+    List<Path> pathList = new ArrayList<Path>();
     private PathMeasure pathMeasure = new PathMeasure(path, false);
     private Matrix matrix = new Matrix();
+    private int counter = 0;
 
     public MainTouchView(Context context)
     {
@@ -47,25 +51,49 @@ public class MainTouchView extends ImageView
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                path.moveTo(eventX, eventY);
-                path.addCircle(eventX, eventY, 20, Path.Direction.CW);
+                if(counter < 3)
+                {
+                    path.moveTo(eventX, eventY);
+                    path.addCircle(eventX, eventY, 20, Path.Direction.CW);
+                }
                 return true;
             case MotionEvent.ACTION_MOVE:
                 //path.lineTo(eventX, eventY);
                 break;
             case MotionEvent.ACTION_UP:
-                float aCoordinates[] = {0f, 0f};
+                /*float aCoordinates[] = {0f, 0f};
                 float bCoordinates[] = {eventX, eventY};
 
                 //pathMeasure.nextContour();
                 pathMeasure.setPath(path, false);
+                pathMeasure.nextContour();
 
                 //get point from the middle
                 pathMeasure.getPosTan(pathMeasure.getLength() * 0.5f, aCoordinates, null);
                 double dist = distance(aCoordinates, bCoordinates);
                 if(dist < 25)
-                    ToastMsg("OK");
-                //path.reset();
+                    ToastMsg("OK");     */
+                if(counter < 3)
+                {
+                    pathList.add(path);
+                    path = new Path();
+                    counter++;
+                }
+                else
+                {
+                    float aCoordinates[] = {0f, 0f};
+                    float bCoordinates[] = {eventX, eventY};
+
+                    for(Path currPath : pathList)
+                    {
+                        pathMeasure.setPath(currPath, false);
+                        //get point from the middle
+                        pathMeasure.getPosTan(pathMeasure.getLength() * 0.5f, aCoordinates, null);
+                        double dist = distance(aCoordinates, bCoordinates);
+                        if(dist < 25)
+                            ToastMsg("OK");
+                    }
+                }
                 break;
             default:
                 return false;
