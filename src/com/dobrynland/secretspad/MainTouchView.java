@@ -14,6 +14,7 @@ import android.graphics.PathMeasure;
 import android.graphics.Matrix;
 import java.util.ArrayList;
 import java.util.List;
+import  	android.util.Log;
 
 
 public class MainTouchView extends ImageView
@@ -75,24 +76,25 @@ public class MainTouchView extends ImageView
                     ToastMsg("OK");     */
                 if(counter < 3)
                 {
-                    pathList.add(path);
-                    path = new Path();
+                    //pathList.add(path);
+                    //path = new Path();
                     counter++;
                 }
                 else
                 {
+                    PathMeasure pm = new PathMeasure(path, false);
+                    int pathCont=0;
                     float aCoordinates[] = {0f, 0f};
-                    float bCoordinates[] = {eventX, eventY};
-
-                    for(Path currPath : pathList)
+                    do
                     {
-                        pathMeasure.setPath(currPath, false);
-                        //get point from the middle
-                        pathMeasure.getPosTan(pathMeasure.getLength() * 0.5f, aCoordinates, null);
+                        pathCont++;
+                        pm.getPosTan(pm.getLength() * 0.5f, aCoordinates, null);
+                        float bCoordinates[] = {eventX, eventY};
                         double dist = distance(aCoordinates, bCoordinates);
-                        if(dist < 25)
-                            ToastMsg("OK");
+                        ToastMsg(Double.toString(dist));
                     }
+                    while(pm.nextContour());
+
                 }
                 break;
             default:
