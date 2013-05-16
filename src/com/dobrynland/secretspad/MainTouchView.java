@@ -8,22 +8,16 @@ import android.graphics.Path;
 import android.view.Gravity;
 import android.widget.ImageView;
 import android.view.MotionEvent;
-import android.graphics.RectF;
 import android.widget.Toast;
 import android.graphics.PathMeasure;
-import android.graphics.Matrix;
-import java.util.ArrayList;
-import java.util.List;
-import  	android.util.Log;
-
+import android.util.DisplayMetrics;
+import java.lang.Math;
 
 public class MainTouchView extends ImageView
 {
     private Paint paint = new Paint();
     private Path path = new Path();
-    List<Path> pathList = new ArrayList<Path>();
-    private PathMeasure pathMeasure = new PathMeasure(path, false);
-    private Matrix matrix = new Matrix();
+    private Path comp_path = new Path();
     private int counter = 0;
 
     public MainTouchView(Context context)
@@ -35,6 +29,17 @@ public class MainTouchView extends ImageView
         paint.setColor(Color.BLUE);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
+
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        int width = metrics.widthPixels;
+        int height = metrics.heightPixels;
+
+
+        comp_path.addCircle((float)Math.random() * (width - 20), (float)Math.random() * (height - 20), 20, Path.Direction.CW);
+        comp_path.addCircle((float)Math.random() * (width - 25), (float)Math.random() * (height - 25), 25, Path.Direction.CW);
+        comp_path.addCircle((float)Math.random() * (width - 30), (float)Math.random() * (height - 30), 30, Path.Direction.CW);
+
+
     }
 
     @Override
@@ -42,6 +47,7 @@ public class MainTouchView extends ImageView
     {
         super.onDraw(canvas);
         canvas.drawPath(path, paint);
+        canvas.drawPath(comp_path, paint);
     }
 
     @Override
@@ -62,46 +68,22 @@ public class MainTouchView extends ImageView
                 //path.lineTo(eventX, eventY);
                 break;
             case MotionEvent.ACTION_UP:
-                /*float aCoordinates[] = {0f, 0f};
-                float bCoordinates[] = {eventX, eventY};
-
-                //pathMeasure.nextContour();
-                pathMeasure.setPath(path, false);
-                pathMeasure.nextContour();
-
-                //get point from the middle
-                pathMeasure.getPosTan(pathMeasure.getLength() * 0.5f, aCoordinates, null);
-                double dist = distance(aCoordinates, bCoordinates);
-                if(dist < 25)
-                    ToastMsg("OK");     */
                 if(counter < 3)
                 {
-                    //pathList.add(path);
-                    //path = new Path();
                     counter++;
                 }
                 else
                 {
-                    PathMeasure pm = new PathMeasure(path, false);
-                    int pathCont=0;
-                    float aCoordinates[] = {0f, 0f};
-                    do
-                    {
-                        pathCont++;
-                        pm.getPosTan(pm.getLength() * 0.5f, aCoordinates, null);
-                        float bCoordinates[] = {eventX, eventY};
-                        double dist = distance(aCoordinates, bCoordinates);
-                        ToastMsg(Double.toString(dist));
-                    }
-                    while(pm.nextContour());
-
+                    if(comparePaths(path, comp_path))
+                        ToastMsg("Auth OK");
+                    else
+                        ToastMsg("Auth NOK");
                 }
                 break;
             default:
                 return false;
         }
 
-        // Schedules a repaint.
         invalidate();
         return true;
     }
@@ -111,6 +93,27 @@ public class MainTouchView extends ImageView
         Toast msg = Toast.makeText(MainTouchView.this.getContext(), str, Toast.LENGTH_SHORT);
         msg.setGravity(Gravity.BOTTOM, msg.getXOffset() / 2, msg.getYOffset() / 2);
         msg.show();
+    }
+
+    boolean comparePaths(Path path1, Path path2)
+    {
+        PathMeasure pm = new PathMeasure(path1, false);
+        PathMeasure pm2 = new PathMeasure(path2, false);
+        float aCoordinates[] = {0f, 0f};
+        float bCoordinates[] = {0f, 0f};
+        do
+        {
+
+            pm.getPosTan(pm.getLength() * 0.5f, aCoordinates, null);
+            pm2.getPosTan(pm2.getLength() * 0.5f, bCoordinates, null);
+            double dist = distance(aCoordinates, bCoordinates);
+            if(dist > 10)
+                return false;
+            pm2.nextContour();
+        }
+        while(pm.nextContour());
+
+        return true;
     }
 
     static float[] computeCentroid(float[] points)
