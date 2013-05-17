@@ -19,6 +19,10 @@ public class MainTouchView extends ImageView
     private Path path = new Path();
     private Path comp_path = new Path();
     private int counter = 0;
+    private int rad = 40;
+    int screen_width;
+    int screen_height;
+
 
     public MainTouchView(Context context)
     {
@@ -31,15 +35,18 @@ public class MainTouchView extends ImageView
         paint.setStrokeJoin(Paint.Join.ROUND);
 
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        int width = metrics.widthPixels;
-        int height = metrics.heightPixels;
+        screen_width = metrics.widthPixels;
+        screen_height = metrics.heightPixels;
 
+        drawThreeRandomCircles();
+    }
 
-        comp_path.addCircle((float)Math.random() * (width - 20), (float)Math.random() * (height - 20), 20, Path.Direction.CW);
-        comp_path.addCircle((float)Math.random() * (width - 25), (float)Math.random() * (height - 25), 25, Path.Direction.CW);
-        comp_path.addCircle((float)Math.random() * (width - 30), (float)Math.random() * (height - 30), 30, Path.Direction.CW);
-
-
+    void drawThreeRandomCircles()
+    {
+        comp_path.reset();
+        comp_path.addCircle((float)Math.random() * (screen_width - rad), (float)Math.random() * (screen_height - rad), rad, Path.Direction.CW);
+        comp_path.addCircle((float)Math.random() * (screen_width - rad - 5), (float)Math.random() * (screen_height - rad - 5), rad + 5, Path.Direction.CW);
+        comp_path.addCircle((float)Math.random() * (screen_width - rad - 10), (float)Math.random() * (screen_height - rad - 10), rad + 10, Path.Direction.CW);
     }
 
     @Override
@@ -61,11 +68,12 @@ public class MainTouchView extends ImageView
                 if(counter < 3)
                 {
                     path.moveTo(eventX, eventY);
-                    path.addCircle(eventX, eventY, 20, Path.Direction.CW);
+                    path.addCircle(eventX, eventY, rad, Path.Direction.CW);
+                    rad += 5;
                 }
                 return true;
             case MotionEvent.ACTION_MOVE:
-                //path.lineTo(eventX, eventY);
+
                 break;
             case MotionEvent.ACTION_UP:
                 if(counter < 3)
@@ -78,6 +86,11 @@ public class MainTouchView extends ImageView
                         ToastMsg("Auth OK");
                     else
                         ToastMsg("Auth NOK");
+
+                    rad = 20;
+                    counter = 0;
+                    path.reset();
+                    drawThreeRandomCircles();
                 }
                 break;
             default:
