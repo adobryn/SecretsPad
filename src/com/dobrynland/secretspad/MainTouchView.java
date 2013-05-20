@@ -1,6 +1,8 @@
 package com.dobrynland.secretspad;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -12,6 +14,7 @@ import android.widget.Toast;
 import android.graphics.PathMeasure;
 import android.util.DisplayMetrics;
 import java.lang.Math;
+import java.util.Random;
 
 public class MainTouchView extends ImageView
 {
@@ -22,7 +25,7 @@ public class MainTouchView extends ImageView
     private int rad = 40;
     int screen_width;
     int screen_height;
-
+    final Random myRandom;
 
     public MainTouchView(Context context)
     {
@@ -34,19 +37,25 @@ public class MainTouchView extends ImageView
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeJoin(Paint.Join.ROUND);
 
-        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
-        screen_width = metrics.widthPixels;
-        screen_height = metrics.heightPixels;
-
+        DisplayMetrics displaymetrics = new DisplayMetrics();
+        ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+        screen_width = displaymetrics.widthPixels;
+        screen_height = displaymetrics.heightPixels;
+        ToastMsg("Screen size: " + Integer.toString(screen_width) + "x" + Integer.toString(screen_height));
+        myRandom = new Random();
         drawThreeRandomCircles();
     }
 
     void drawThreeRandomCircles()
     {
+
         comp_path.reset();
-        comp_path.addCircle((float)Math.random() * (screen_width - rad), (float)Math.random() * (screen_height - rad), rad, Path.Direction.CW);
-        comp_path.addCircle((float)Math.random() * (screen_width - rad - 5), (float)Math.random() * (screen_height - rad - 5), rad + 5, Path.Direction.CW);
-        comp_path.addCircle((float)Math.random() * (screen_width - rad - 10), (float)Math.random() * (screen_height - rad - 10), rad + 10, Path.Direction.CW);
+        comp_path.addCircle(myRandom.nextInt(screen_width - rad * 2), myRandom.nextInt(screen_height - rad * 2), rad, Path.Direction.CW);
+        comp_path.addCircle(myRandom.nextInt (screen_width - (rad - 5) * 2), myRandom.nextInt (screen_height - (rad - 5) * 2), rad + 5, Path.Direction.CW);
+        comp_path.addCircle(myRandom.nextInt (screen_width - (rad - 10) * 2),myRandom.nextInt (screen_height -(rad - 10) * 2), rad + 10, Path.Direction.CW);
+        /*comp_path.addCircle((int)Math.random() * (screen_width - rad * 2), (int)Math.random() * (screen_height - rad * 2), rad, Path.Direction.CW);
+        comp_path.addCircle((int)Math.random() * (screen_width - (rad - 5) * 2), (int)Math.random() * (screen_height - (rad - 5) * 2), rad + 5, Path.Direction.CW);
+        comp_path.addCircle((int)Math.random() * (screen_width - (rad - 10) * 2), (int)Math.random() * (screen_height -(rad - 10) * 2), rad + 10, Path.Direction.CW);*/
     }
 
     @Override
@@ -70,27 +79,31 @@ public class MainTouchView extends ImageView
                     path.moveTo(eventX, eventY);
                     path.addCircle(eventX, eventY, rad, Path.Direction.CW);
                     rad += 5;
+                    counter++;
                 }
                 return true;
             case MotionEvent.ACTION_MOVE:
 
                 break;
             case MotionEvent.ACTION_UP:
-                if(counter < 3)
-                {
-                    counter++;
-                }
-                else
+                if(counter >= 3)
                 {
                     if(comparePaths(path, comp_path))
+                    {
                         ToastMsg("Auth OK");
+                        Context context = getContext();
+                        Intent i = new Intent(context, Notepad.class);
+                        context.startActivity(i);
+                    }
                     else
+                    {
                         ToastMsg("Auth NOK");
+                        rad = 20;
+                        counter = 0;
+                        path.reset();
+                        drawThreeRandomCircles();
 
-                    rad = 20;
-                    counter = 0;
-                    path.reset();
-                    drawThreeRandomCircles();
+                    }
                 }
                 break;
             default:
