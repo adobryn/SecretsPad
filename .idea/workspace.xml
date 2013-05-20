@@ -31,7 +31,7 @@
     <file path="/fragment.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369034914563" ignored="false" />
     <file path="$PROJECT_DIR$/../untitled/src/Main.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1366892381752" ignored="false" />
     <file path="/Main.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1366892354747" ignored="false" />
-    <file path="/MainTouchView.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369036278107" ignored="false" />
+    <file path="/MainTouchView.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369037148479" ignored="false" />
     <file path="/DefaultValues.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368520373154" ignored="false" />
     <file path="/MainActivity.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368532937364" ignored="false" />
     <file path="/a.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368540137787" ignored="false" />
@@ -129,7 +129,7 @@
       <file leaf-file-name="MainTouchView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="26" selection-start="1601" selection-end="1601" vertical-scroll-proportion="0.7830189">
+            <state line="127" column="79" selection-start="4544" selection-end="4544" vertical-scroll-proportion="0.44486693">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -612,7 +612,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -624,14 +624,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3985765" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24878444" sideWeight="0.33926454" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24878444" sideWeight="0.33333334" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878444" sideWeight="0.80071175" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19928825" sideWeight="0.49918962" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878444" sideWeight="0.6702254" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19928825" sideWeight="0.49918962" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -821,7 +821,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="26" selection-start="1601" selection-end="1601" vertical-scroll-proportion="0.7830189">
+        <state line="127" column="79" selection-start="4544" selection-end="4544" vertical-scroll-proportion="0.44486693">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

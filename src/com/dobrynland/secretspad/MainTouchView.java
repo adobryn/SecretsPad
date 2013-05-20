@@ -50,6 +50,7 @@ public class MainTouchView extends ImageView
     {
 
         comp_path.reset();
+        rad = 40;
         comp_path.addCircle(myRandom.nextInt(screen_width - rad * 2), myRandom.nextInt(screen_height - rad * 2), rad, Path.Direction.CW);
         comp_path.addCircle(myRandom.nextInt (screen_width - (rad - 5) * 2), myRandom.nextInt (screen_height - (rad - 5) * 2), rad + 5, Path.Direction.CW);
         comp_path.addCircle(myRandom.nextInt (screen_width - (rad - 10) * 2),myRandom.nextInt (screen_height -(rad - 10) * 2), rad + 10, Path.Direction.CW);
@@ -98,7 +99,6 @@ public class MainTouchView extends ImageView
                     else
                     {
                         ToastMsg("Auth NOK");
-                        rad = 20;
                         counter = 0;
                         path.reset();
                         drawThreeRandomCircles();
@@ -133,7 +133,7 @@ public class MainTouchView extends ImageView
             pm.getPosTan(pm.getLength() * 0.5f, aCoordinates, null);
             pm2.getPosTan(pm2.getLength() * 0.5f, bCoordinates, null);
             double dist = distance(aCoordinates, bCoordinates);
-            if(dist > 10)
+            if(dist > rad / 2)
                 return false;
             pm2.nextContour();
         }
