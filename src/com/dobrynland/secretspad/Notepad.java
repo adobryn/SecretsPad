@@ -37,6 +37,7 @@ public class Notepad extends ListActivity
 
     private static final int INSERT_ID = Menu.FIRST;
     private static final int DELETE_ID = Menu.FIRST + 1;
+    private static final int PREF_ID = Menu.FIRST + 2;
 
     private NotesDbAdapter mDbHelper;
 
@@ -76,6 +77,7 @@ public class Notepad extends ListActivity
     {
         super.onCreateOptionsMenu(menu);
         menu.add(0, INSERT_ID, 0, R.string.menu_insert);
+        menu.add(0, PREF_ID, 0, R.string.preferences);
         return true;
     }
 
@@ -85,6 +87,9 @@ public class Notepad extends ListActivity
         switch (item.getItemId()) {
             case INSERT_ID:
                 createNote();
+                return true;
+            case PREF_ID:
+                showSettings();
                 return true;
         }
 
@@ -116,6 +121,12 @@ public class Notepad extends ListActivity
     {
         Intent i = new Intent(this, NoteEdit.class);
         startActivityForResult(i, ACTIVITY_CREATE);
+    }
+
+    public void showSettings()
+    {
+        Intent i = new Intent(this, Preferences.class);
+        startActivity(i);
     }
 
     @Override

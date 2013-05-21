@@ -9,4 +9,6 @@
     <string name="body">Body</string>
     <string name="confirm">Confirm</string>
     <string name="edit_note">Edit Note</string>
+    <string name="preferences">Preferences</string>
+    <string name="exit">Exit</string>
 </resources>

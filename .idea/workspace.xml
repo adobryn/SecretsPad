@@ -27,7 +27,7 @@
     <list default="true" id="c2a62991-63e1-4528-8ef1-fc68ac48f49c" name="Default" comment="" />
     <ignored path="SecretsPad.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369034342085" ignored="false" />
+    <file path="/Dummy.txt" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369139370965" ignored="false" />
     <file path="/fragment.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369034914563" ignored="false" />
     <file path="$PROJECT_DIR$/../untitled/src/Main.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1366892381752" ignored="false" />
     <file path="/Main.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1366892354747" ignored="false" />
@@ -36,10 +36,13 @@
     <file path="/MainActivity.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368532937364" ignored="false" />
     <file path="/a.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368540137787" ignored="false" />
     <file path="/sample.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368529997135" ignored="false" />
-    <file path="/Notepad.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368797616063" ignored="false" />
+    <file path="/Notepad.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369144668604" ignored="false" />
     <file path="/notes_row.xml" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1368797462808" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369036091735" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369034466191" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369145194849" ignored="false" />
+    <file path="/preferences.xml" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369139409730" ignored="false" />
+    <file path="/strings.xml" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369143350336" ignored="false" />
+    <file path="/Preferences.java" changelist="c2a62991-63e1-4528-8ef1-fc68ac48f49c" time="1369144216551" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,19 +123,26 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="22" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0">
+            <state line="33" column="51" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainTouchView.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
+      <file leaf-file-name="Notepad.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/Notepad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="79" selection-start="4544" selection-end="4544" vertical-scroll-proportion="0.44486693">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="92" column="28" selection-start="3077" selection-end="3077" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="119" selection-start="1466" selection-end="1466" vertical-scroll-proportion="0.34052387">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -165,12 +175,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/dobrynland/secretspad/DefaultValues.java" />
         <option value="$PROJECT_DIR$/src/com/dobrynland/secretspad/MainActivity.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/notes_list.xml" />
         <option value="$PROJECT_DIR$/res/layout/notes_row.xml" />
+        <option value="$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/layout/preferences.xml" />
+        <option value="$PROJECT_DIR$/src/com/dobrynland/secretspad/Preferences.java" />
         <option value="$PROJECT_DIR$/src/com/dobrynland/secretspad/Notepad.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java" />
       </list>
     </option>
   </component>
@@ -263,6 +275,24 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecretsPad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SecretsPad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -328,6 +358,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\adobryn\workspace\SecretsPad\res\xml" />
+      <recent name="C:\Users\adobryn\workspace\SecretsPad\res" />
       <recent name="C:\Users\adobryn\workspace\SecretsPad\src\com\dobrynland\secretspad" />
       <recent name="C:\Users\adobryn\workspace\SecretsPad\res\layout" />
       <recent name="C:\Users\adobryn\workspace\SecretsPad\res\drawable-mdpi" />
@@ -624,14 +656,14 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3985765" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24878444" sideWeight="0.33926454" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24878444" sideWeight="0.33333334" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878444" sideWeight="0.6702254" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19928825" sideWeight="0.49918962" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24878444" sideWeight="0.80071175" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19928825" sideWeight="0.49918962" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -706,27 +738,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="36" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="10" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/DefaultValues.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="18" selection-start="310" selection-end="310" vertical-scroll-proportion="0.2523191" />
@@ -735,13 +746,6 @@
     <entry file="jar://$USER_HOME$/Documents/Soft/adt-bundle-windows-x86-20130219/sdk/platforms/android-17/android.jar!/android/view/View.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="491" column="19" selection-start="24098" selection-end="24098" vertical-scroll-proportion="0.33333334" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="11" selection-start="50" selection-end="50" vertical-scroll-proportion="0.02724359">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/notes_row.xml">
@@ -771,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="22" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/note_edit.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="44" selection-start="868" selection-end="868" vertical-scroll-proportion="-7.82">
@@ -786,13 +783,6 @@
       </provider>
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="5" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.7596302">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_main.xml">
@@ -812,19 +802,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/Notepad.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="39" selection-start="2176" selection-end="2186" vertical-scroll-proportion="0.02672956">
+        <state line="127" column="79" selection-start="4544" selection-end="4544" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/NotesDbAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="48" selection-start="1673" selection-end="1673" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainTouchView.java">
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="79" selection-start="4544" selection-end="4544" vertical-scroll-proportion="0.44486693">
+        <state line="13" column="17" selection-start="575" selection-end="575" vertical-scroll-proportion="0.44827586">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/preferences.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="20" selection-start="630" selection-end="630" vertical-scroll-proportion="0.508547">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="18" selection-start="345" selection-end="345" vertical-scroll-proportion="0.44155845">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="51" selection-start="695" selection-end="695" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dobrynland/secretspad/Notepad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="28" selection-start="3077" selection-end="3077" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="119" selection-start="1466" selection-end="1466" vertical-scroll-proportion="0.34052387">
+          <folding />
         </state>
       </provider>
     </entry>
