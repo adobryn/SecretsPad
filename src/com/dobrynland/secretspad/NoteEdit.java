@@ -23,17 +23,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class NoteEdit extends Activity {
+public class NoteEdit extends Activity
+{
 
     private EditText mTitleText;
     private EditText mBodyText;
     private Long mRowId;
-    private NotesDbAdapter mDbHelper;
+    private DbAdapter mDbHelper;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        mDbHelper = new NotesDbAdapter(this);
+        mDbHelper = new DbAdapter(this);
         mDbHelper.open();
 
         setContentView(R.layout.note_edit);
@@ -45,18 +47,21 @@ public class NoteEdit extends Activity {
         Button confirmButton = (Button) findViewById(R.id.confirm);
 
         mRowId = (savedInstanceState == null) ? null :
-            (Long) savedInstanceState.getSerializable(NotesDbAdapter.KEY_ROWID);
-		if (mRowId == null) {
-			Bundle extras = getIntent().getExtras();
-			mRowId = extras != null ? extras.getLong(NotesDbAdapter.KEY_ROWID)
-									: null;
-		}
+                (Long) savedInstanceState.getSerializable(DbAdapter.KEY_ROWID);
+        if (mRowId == null)
+        {
+            Bundle extras = getIntent().getExtras();
+            mRowId = extras != null ? extras.getLong(DbAdapter.KEY_ROWID)
+                    : null;
+        }
 
-		populateFields();
+        populateFields();
 
-        confirmButton.setOnClickListener(new View.OnClickListener() {
+        confirmButton.setOnClickListener(new View.OnClickListener()
+        {
 
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 setResult(RESULT_OK);
                 finish();
             }
@@ -64,46 +69,56 @@ public class NoteEdit extends Activity {
         });
     }
 
-    private void populateFields() {
-        if (mRowId != null) {
+    private void populateFields()
+    {
+        if (mRowId != null)
+        {
             Cursor note = mDbHelper.fetchNote(mRowId);
             startManagingCursor(note);
             mTitleText.setText(note.getString(
-                    note.getColumnIndexOrThrow(NotesDbAdapter.KEY_TITLE)));
+                    note.getColumnIndexOrThrow(DbAdapter.KEY_TITLE)));
             mBodyText.setText(note.getString(
-                    note.getColumnIndexOrThrow(NotesDbAdapter.KEY_BODY)));
+                    note.getColumnIndexOrThrow(DbAdapter.KEY_BODY)));
         }
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(Bundle outState)
+    {
         super.onSaveInstanceState(outState);
         saveState();
-        outState.putSerializable(NotesDbAdapter.KEY_ROWID, mRowId);
+        outState.putSerializable(DbAdapter.KEY_ROWID, mRowId);
     }
 
     @Override
-    protected void onPause() {
+    protected void onPause()
+    {
         super.onPause();
         saveState();
     }
 
     @Override
-    protected void onResume() {
+    protected void onResume()
+    {
         super.onResume();
         populateFields();
     }
 
-    private void saveState() {
+    private void saveState()
+    {
         String title = mTitleText.getText().toString();
         String body = mBodyText.getText().toString();
 
-        if (mRowId == null) {
+        if (mRowId == null)
+        {
             long id = mDbHelper.createNote(title, body);
-            if (id > 0) {
+            if (id > 0)
+            {
                 mRowId = id;
             }
-        } else {
+        }
+        else
+        {
             mDbHelper.updateNote(mRowId, title, body);
         }
     }

@@ -28,7 +28,6 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.AdapterView.AdapterContextMenuInfo;
-import android.content.CursorLoader;
 
 public class Notepad extends ListActivity
 {
@@ -39,7 +38,7 @@ public class Notepad extends ListActivity
     private static final int DELETE_ID = Menu.FIRST + 1;
     private static final int PREF_ID = Menu.FIRST + 2;
 
-    private NotesDbAdapter mDbHelper;
+    private DbAdapter mDbHelper;
 
     /**
      * Called when the activity is first created.
@@ -49,7 +48,7 @@ public class Notepad extends ListActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notes_list);
-        mDbHelper = new NotesDbAdapter(this);
+        mDbHelper = new DbAdapter(this);
         mDbHelper.open();
         fillData();
         registerForContextMenu(getListView());
@@ -61,7 +60,7 @@ public class Notepad extends ListActivity
         startManagingCursor(notesCursor);
 
         // Create an array to specify the fields we want to display in the list (only TITLE)
-        String[] from = new String[]{NotesDbAdapter.KEY_TITLE};
+        String[] from = new String[]{DbAdapter.KEY_TITLE};
 
         // and an array of the fields we want to bind those fields to (in this case just text1)
         int[] to = new int[]{R.id.text1};
@@ -134,7 +133,7 @@ public class Notepad extends ListActivity
     {
         super.onListItemClick(l, v, position, id);
         Intent i = new Intent(this, NoteEdit.class);
-        i.putExtra(NotesDbAdapter.KEY_ROWID, id);
+        i.putExtra(DbAdapter.KEY_ROWID, id);
         startActivityForResult(i, ACTIVITY_EDIT);
     }
 

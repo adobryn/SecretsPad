@@ -34,13 +34,26 @@ import android.util.Log;
  * of using a collection of inner classes (which is less scalable and not
  * recommended).
  */
-public class NotesDbAdapter {
+public class DbAdapter
+{
+    /**
+     * Notes table fields
+     */
 
     public static final String KEY_TITLE = "title";
     public static final String KEY_BODY = "body";
+
+    /**
+     * Circles table fields
+     */
+
+    public static final String KEY_X = "coord_x";
+    public static final String KEY_Y = "coord_y";
+    public static final String KEY_RAD = "radius";
+
     public static final String KEY_ROWID = "_id";
 
-    private static final String TAG = "NotesDbAdapter";
+    private static final String TAG = "DbAdapter";
     private DatabaseHelper mDbHelper;
     private SQLiteDatabase mDb;
 
@@ -49,10 +62,13 @@ public class NotesDbAdapter {
      */
     private static final String DATABASE_CREATE =
         "create table notes (_id integer primary key autoincrement, "
-        + "title text not null, body text not null);";
+        + "title text not null, body text not null);"
+            + "create table circles (_id integer primary key autoincrement, "
+            + "coord_x real not null, coord_y real not null, radius real not null);";
 
     private static final String DATABASE_NAME = "data";
-    private static final String DATABASE_TABLE = "notes";
+    private static final String DATABASE_NOTES_TABLE = "notes";
+    private static final String DATABASE_CIRCLES_TABLE = "circles";
     private static final int DATABASE_VERSION = 2;
 
     private final Context mCtx;
@@ -84,7 +100,7 @@ public class NotesDbAdapter {
      * 
      * @param ctx the Context within which to work
      */
-    public NotesDbAdapter(Context ctx) {
+    public DbAdapter(Context ctx) {
         this.mCtx = ctx;
     }
 
@@ -97,7 +113,7 @@ public class NotesDbAdapter {
      *         initialization call)
      * @throws SQLException if the database could be neither opened or created
      */
-    public NotesDbAdapter open() throws SQLException {
+    public DbAdapter open() throws SQLException {
         mDbHelper = new DatabaseHelper(mCtx);
         mDb = mDbHelper.getWritableDatabase();
         return this;
@@ -122,7 +138,26 @@ public class NotesDbAdapter {
         initialValues.put(KEY_TITLE, title);
         initialValues.put(KEY_BODY, body);
 
-        return mDb.insert(DATABASE_TABLE, null, initialValues);
+        return mDb.insert(DATABASE_NOTES_TABLE, null, initialValues);
+    }
+
+    /**
+     * Create a new circle using the coordinates and radius provided. If the circle is
+     * successfully created return the new rowId for that note, otherwise return
+     * a -1 to indicate failure.
+     *
+     * @param x the x coord of the circle
+     * @param y the y coord of the circle
+     * @return rowId or -1 if failed
+     */
+    public long createCircle(float x, float y, float rad)
+    {
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_X, x);
+        initialValues.put(KEY_Y, y);
+        initialValues.put(KEY_RAD, rad);
+
+        return mDb.insert(DATABASE_CIRCLES_TABLE, null, initialValues);
     }
 
     /**
@@ -133,7 +168,18 @@ public class NotesDbAdapter {
      */
     public boolean deleteNote(long rowId) {
 
-        return mDb.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
+        return mDb.delete(DATABASE_NOTES_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
+    }
+
+    /**
+     * Delete the circle with the given rowId
+     *
+     * @param rowId id of circle to delete
+     * @return true if deleted, false otherwise
+     */
+    public boolean deleteCircle(long rowId) {
+
+        return mDb.delete(DATABASE_CIRCLES_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
     }
 
     /**
@@ -143,7 +189,7 @@ public class NotesDbAdapter {
      */
     public Cursor fetchAllNotes() {
 
-        return mDb.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TITLE,
+        return mDb.query(DATABASE_NOTES_TABLE, new String[] {KEY_ROWID, KEY_TITLE,
                 KEY_BODY}, null, null, null, null, null);
     }
 
@@ -158,7 +204,7 @@ public class NotesDbAdapter {
 
         Cursor mCursor =
 
-            mDb.query(true, DATABASE_TABLE, new String[] {KEY_ROWID,
+            mDb.query(true, DATABASE_NOTES_TABLE, new String[] {KEY_ROWID,
                     KEY_TITLE, KEY_BODY}, KEY_ROWID + "=" + rowId, null,
                     null, null, null, null);
         if (mCursor != null) {
@@ -183,6 +229,6 @@ public class NotesDbAdapter {
         args.put(KEY_TITLE, title);
         args.put(KEY_BODY, body);
 
-        return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+        return mDb.update(DATABASE_NOTES_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
     }
 }
