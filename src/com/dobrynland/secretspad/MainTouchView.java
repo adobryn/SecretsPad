@@ -48,8 +48,9 @@ public class MainTouchView extends ImageView
         ToastMsg("Screen size: " + Integer.toString(screen_width) + "x" + Integer.toString(screen_height));
         myRandom = new Random();
         //drawThreeRandomCircles();
-        pathFile  =  context.getFilesDir() + "circles.xml";
-        File file = getContext().getFileStreamPath(pathFile);
+        pathFile  =  context.getFilesDir() + "/circles.xml";
+        //File file = context.getFileStreamPath(pathFile);
+        File file = new File(pathFile);
         if(file.exists())
         {
             needCheck = true;
@@ -78,7 +79,7 @@ public class MainTouchView extends ImageView
     {
         super.onDraw(canvas);
         canvas.drawPath(path, paint);
-        //canvas.drawPath(comp_path, paint);
+        canvas.drawPath(comp_path, paint);
     }
 
     @Override
@@ -106,9 +107,7 @@ public class MainTouchView extends ImageView
                         if(comparePaths(path, comp_path))
                         {
                             ToastMsg("Auth OK");
-                            Context context = getContext();
-                            Intent i = new Intent(context, Notepad.class);
-                            context.startActivity(i);
+                            startNotepad();
                         }
                         else
                         {
@@ -122,6 +121,7 @@ public class MainTouchView extends ImageView
                     {
                         savePath(path);
                         ToastMsg("New key created");
+                        startNotepad();
                     }
                 }
                 break;
@@ -133,6 +133,12 @@ public class MainTouchView extends ImageView
         return true;
     }
 
+    public void startNotepad()
+    {
+        Context context = getContext();
+        Intent i = new Intent(context, Notepad.class);
+        context.startActivity(i);
+    }
     public Path loadPath()
     {
         Path path = new Path();
