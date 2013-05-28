@@ -26,7 +26,7 @@ public class MainTouchView extends ImageView
     private boolean needCheck = false;
     private int counter = 0;
     private int rad = 50;
-    private String pathFile;
+    private String filePath;
     int screen_width;
     int screen_height;
     final Random myRandom;
@@ -48,9 +48,9 @@ public class MainTouchView extends ImageView
         ToastMsg("Screen size: " + Integer.toString(screen_width) + "x" + Integer.toString(screen_height));
         myRandom = new Random();
         //drawThreeRandomCircles();
-        pathFile  =  context.getFilesDir() + "/circles.xml";
-        //File file = context.getFileStreamPath(pathFile);
-        File file = new File(pathFile);
+        filePath =  context.getFilesDir() + "/circles.xml";
+        //File file = context.getFileStreamPath(filePath);
+        File file = new File(filePath);
         if(file.exists())
         {
             needCheck = true;
@@ -94,7 +94,6 @@ public class MainTouchView extends ImageView
                 {
                     path.moveTo(eventX, eventY);
                     path.addCircle(eventX, eventY, rad, Path.Direction.CW);
-                    //rad += 5;
                     counter++;
                 }
                 return true;
@@ -143,15 +142,18 @@ public class MainTouchView extends ImageView
     {
         Path path = new Path();
         float x, y;
+
         try
         {
-            FileInputStream fis = new FileInputStream(pathFile);
+            FileInputStream fis = new FileInputStream(filePath);
             DataInputStream dis = new DataInputStream(fis);
+
             for(int i = 0; i < 3; i++)
             {
                 x = dis.readFloat();
                 y = dis.readFloat();
-                path.addCircle(x, y, rad, Path.Direction.CW);
+
+                path.addCircle(x + rad, y, rad, Path.Direction.CW);
             }
             dis.close();
         }
@@ -174,16 +176,18 @@ public class MainTouchView extends ImageView
         float coords[] = {0f, 0f};
         try
         {
-            FileOutputStream fos = new FileOutputStream(pathFile);
+            FileOutputStream fos = new FileOutputStream(filePath);
             DataOutputStream dos = new DataOutputStream(fos);
+
             do
             {
-                pm.getPosTan(pm.getLength() * 0.5f, coords, null);
-                dos.writeFloat(coords[0]);
-                dos.writeFloat(coords[1]);
+               pm.getPosTan(pm.getLength() * 0.5f, coords, null);
+               dos.writeFloat(coords[0]);
+               dos.writeFloat(coords[1]);
             }
             while(pm.nextContour());
             dos.close();
+
         }
         catch (IOException e)
         {
