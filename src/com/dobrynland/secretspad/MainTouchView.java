@@ -79,7 +79,7 @@ public class MainTouchView extends ImageView
     {
         super.onDraw(canvas);
         canvas.drawPath(path, paint);
-        canvas.drawPath(comp_path, paint);
+        //canvas.drawPath(comp_path, paint);
     }
 
     @Override
