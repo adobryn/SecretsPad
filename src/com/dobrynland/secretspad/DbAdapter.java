@@ -149,6 +149,8 @@ public class DbAdapter
      * 
      * @return Cursor over all notes
      */
+
+
     public Cursor fetchAllNotes() {
 
         return mDb.query(DATABASE_NOTES_TABLE, new String[] {KEY_ROWID, KEY_TITLE,

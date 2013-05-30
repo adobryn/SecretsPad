@@ -30,6 +30,7 @@ public class MainTouchView extends ImageView
     int screen_width;
     int screen_height;
     final Random myRandom;
+    private int key_length = 3;
 
     public MainTouchView(Context context)
     {
@@ -45,7 +46,7 @@ public class MainTouchView extends ImageView
         ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         screen_width = displaymetrics.widthPixels;
         screen_height = displaymetrics.heightPixels;
-        ToastMsg("Screen size: " + Integer.toString(screen_width) + "x" + Integer.toString(screen_height));
+        //ToastMsg("Screen size: " + Integer.toString(screen_width) + "x" + Integer.toString(screen_height));
         myRandom = new Random();
         //drawThreeRandomCircles();
         filePath =  context.getFilesDir() + "/circles.xml";
@@ -148,7 +149,7 @@ public class MainTouchView extends ImageView
             FileInputStream fis = new FileInputStream(filePath);
             DataInputStream dis = new DataInputStream(fis);
 
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < key_length; i++)
             {
                 x = dis.readFloat();
                 y = dis.readFloat();

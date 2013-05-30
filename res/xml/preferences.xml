@@ -5,11 +5,33 @@
                   android:layout_width="match_parent"
                   android:layout_height="match_parent">
     <PreferenceCategory
-            android:title="First Category">
-        <CheckBoxPreference
-                android:title="Checkbox Preference"
-                android:defaultValue="false"
-                android:summary="This preference can be true or false"
-                android:key="checkboxPref"/>
+            android:title="Key settings">
+        <EditTextPreference
+                android:name="Key length"
+                android:summary="Gestures count"
+                android:defaultValue="Nothing"
+                android:title="Key length"
+                android:key="editTextPref" />
+        <EditTextPreference
+                android:name="Key strength"
+                android:summary="Key verification strength"
+                android:defaultValue="Nothing"
+                android:title="Key strength"
+                android:key="editTextPref" />
+        <EditTextPreference
+                android:name="New key"
+                android:summary="Kreate new key"
+                android:defaultValue="Nothing"
+                android:title="New key"
+                android:key="editTextPref" />
+    </PreferenceCategory>
+    <PreferenceCategory
+            android:title="App settings">
+        <EditTextPreference
+                android:name="Background image"
+                android:summary="Select image from gallery"
+                android:defaultValue="Nothing"
+                android:title="Background image"
+                android:key="editTextPref" />
     </PreferenceCategory>
 </PreferenceScreen>

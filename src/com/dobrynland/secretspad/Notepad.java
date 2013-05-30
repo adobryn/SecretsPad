@@ -18,8 +18,10 @@ package com.dobrynland.secretspad;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -142,5 +144,12 @@ public class Notepad extends ListActivity
     {
         super.onActivityResult(requestCode, resultCode, intent);
         fillData();
+
+        /*SharedPreferences customSharedPreference = getSharedPreferences(
+                "myCustomSharedPrefs", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = customSharedPreference
+                .edit();
+        editor.putString("key_length",
+                "4");    */
     }
 }
