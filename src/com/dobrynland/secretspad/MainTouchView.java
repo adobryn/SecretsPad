@@ -91,7 +91,7 @@ public class MainTouchView extends ImageView
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                if(counter < 3)
+                if(counter < key_length)
                 {
                     path.moveTo(eventX, eventY);
                     path.addCircle(eventX, eventY, rad, Path.Direction.CW);
@@ -99,7 +99,7 @@ public class MainTouchView extends ImageView
                 }
                 return true;
             case MotionEvent.ACTION_UP:
-                if(counter >= 3)
+                if(counter >= key_length)
                 {
                     if(needCheck)
                     {
@@ -114,7 +114,6 @@ public class MainTouchView extends ImageView
                             ToastMsg("Auth NOK");
                             counter = 0;
                             path.reset();
-                            //drawThreeRandomCircles();
                         }
                     }
                     else
