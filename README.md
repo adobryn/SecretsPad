@@ -1,3 +1,3 @@
 SecretsPad
 ==========
-My old code from univercity
+My old code from university
